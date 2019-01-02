@@ -20,6 +20,9 @@
 #define __CHECK_ROOT_H
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <getopt.h>
 
 #define VERSION "v0.1"
 
@@ -32,7 +35,7 @@
 			"%s version %s\n" \
 			"Usage: %s [options]\n" \
 			"  -h  --help       Display this text\n" \
-			"  -V  --version    Display version\n" \
+			"  -V  --version    Display version\n", \
 			PROGRAM_NAME, VERSION, PROGRAM_NAME \
 		);
 
