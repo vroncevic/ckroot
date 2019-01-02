@@ -17,9 +17,6 @@
  * with this program_name.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "check_root.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <getopt.h>
 
 static const char *program_name;
 
