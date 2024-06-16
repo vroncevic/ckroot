@@ -1,31 +1,41 @@
-# Check root id (bash command)
+# Check root id (cli)
 
-The README is used to introduce the tool and provide instructions on
-how to install the tool, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the tool is installed.
+CLI tool for checking root.
 
-### INSTALLATION
+Developed in [C](https://en.wikipedia.org/wiki/C_(programming_language)) code.
 
-To install this tool type the following:
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
 
+- [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Docs](#docs)
+- [Copyright and licence](#copyright-and-licence)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+### Installation
+
+To install **ckroot** type the following
+
+```bash
+tar xvzf ckroot-x.y.z.tar.gz
+cd ckroot-x.y.z/
+./autogen.sh
+make
+sudo make install
 ```
-$cat INSTALL
-```
 
-and follow instructions.
+### Dependencies
 
-### DEPENDENCIES
+**ckroot** requires next modules and libraries
+* libc - www.gnu.org [https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/)
 
-This tool requires these other modules and libraries:
+### Usage
 
-```
-Standard ANSI libraries
-```
-
-### USAGE
-
-```
+```bash
 #!/bin/bash
 
 ckroot
@@ -40,11 +50,25 @@ fi
 exit 0
 ```
 
-### COPYRIGHT AND LICENCE
+### Docs
 
-Copyright (C) 2019 by https://vroncevic.github.io/check_root
+[![Documentation Status](https://readthedocs.org/projects/ckroot/badge/?version=latest)](https://ckroot.readthedocs.io/en/latest/?badge=latest)
 
-This tool is free software; you can redistribute it and/or modify it.
+More documentation and info at
 
-:sparkles:
+* [ckroot.readthedocs.io](https://ckroot.readthedocs.io)
 
+### Copyright and licence
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+Copyright (C) 2017 - 2024 by [vroncevic.github.io/ckroot](https://vroncevic.github.io/ckroot)
+
+**ckroot** is free software; you can redistribute it and/or modify
+it under the same terms as GPLv3.
+
+Lets help and support FSF.
+
+[![Free Software Foundation](https://raw.githubusercontent.com/vroncevic/apmodule/dev/docs/fsf-logo_1.png)](https://my.fsf.org/)
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://my.fsf.org/donate/)
