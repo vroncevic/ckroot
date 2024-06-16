@@ -1,6 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * main.c
+ * ckroot.h
  * Copyright (C) 2017 - 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * ckroot is free software: you can redistribute it and/or modify it
@@ -14,42 +14,25 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program_name.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "ckroot.h"
+#pragma once
 
-static const char *program_name;
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <getopt.h>
 
-static const struct option long_options[] = {
-	{"help", 0, NULL, 'h'},
-	{"version", 0, NULL, 'V'},
-	{0, 0, 0, 0}
-};
+#define VERSION "v0.1"
 
-int main(int argc, char *argv[])
-{
-	int opt, index;
+#define CKROOT_VERSION(PROGRAM_NAME) \
+	fprintf(stdout, "%s version %s\n", PROGRAM_NAME, VERSION);
 
-	program_name = argv[0];
-
-	if ((opt = getopt_long(argc, argv, "hv", long_options, &index)) != EOF)
-	{
-		switch (opt)
-		{
-		case 'V':
-			CKROOT_VERSION(program_name);
-			exit(0);
-		default:
-			CKROOT_USAGE(program_name);
-			exit(0);
-			break;
-		}
-	}
-
-	if (getuid() != 0)
-	{
-		return (1);
-	}
-
-	return (0);
-}
+#define CKROOT_USAGE(PROGRAM_NAME)               \
+	fprintf(                                     \
+		stdout,                                  \
+		"%s version %s\n"                        \
+		"Usage: %s [options]\n"                  \
+		"  -h  --help       Display this text\n" \
+		"  -V  --version    Display version\n",  \
+		PROGRAM_NAME, VERSION, PROGRAM_NAME);
